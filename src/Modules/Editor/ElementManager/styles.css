@@ -1,0 +1,59 @@
+.element-manager {
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 400px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .element-item {
+    margin-left: 20px;
+    margin-top: 10px;
+    position: relative;
+  }
+  
+  .item {
+    margin-bottom: 5px;
+  }
+  
+  .element-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .div, .element-name {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .add-element {
+    position: absolute;
+    top: 0;
+    right: -150px;
+    background: black;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .element-options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    text-transform: capitalize;
+  }
+  
+  .element-options button {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .toggle-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+  }
+  
