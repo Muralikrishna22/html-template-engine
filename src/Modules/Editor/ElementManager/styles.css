@@ -34,6 +34,7 @@
     background: black;
     padding: 10px;
     border-radius: 10px;
+    z-index: 2;
   }
   
   .element-options {

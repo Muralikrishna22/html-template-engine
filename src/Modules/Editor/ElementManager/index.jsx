@@ -16,7 +16,8 @@ function ElementManager({
       type: type,
       name: type.toUpperCase(),
       children: ['div', 'a', 'p'].includes(type) ? [] : null,
-      style: {} // Default style
+      style: {},
+      values:{}
     };
     if (parentId === null) {
       setRootElements([...rootElements, newElement]);

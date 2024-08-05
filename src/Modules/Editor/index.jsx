@@ -6,7 +6,7 @@ import Viewer from './Viewer';
 
 const Editor = () => {
   const [rootElements, setRootElements] = useState([
-    { id: Date.now(), type: 'div', name: 'Root', children: [], style: {} }
+      { id: Date.now(), type: 'div', name: 'Root', children: [], style: {}, values:{} }
   ]);
   const [selectedElement, setSelectedElement] = useState(null);
 
@@ -18,7 +18,7 @@ const Editor = () => {
   const updateElementpropsRecursive = (elements, id, props) => {
     return elements.map((element) => {
       if (element.id === id) {
-        return { ...element, ...(props.values || {}), style: { ...element.style, ...(props.styles || {}) } };
+        return { ...element, ...(props.values || {}), style: { ...element.style, ...(props.styles || {}) }, values:{...(props.values || {})} };
       } else if (element.children) {
         return {
           ...element,

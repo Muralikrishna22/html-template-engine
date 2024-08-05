@@ -18,10 +18,10 @@ function ElementItem({ elements, onAddElement, parentType, onUpdateElement, setS
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleAddClick = (e) => {
+  const handleAddClick = (e, parent) => {
     e.stopPropagation();
     e.preventDefault();
-    setShowOptions(!showOptions);
+    setShowOptions(parent);
   };
 
   const handleAuxClick = (e) => {
@@ -29,8 +29,8 @@ function ElementItem({ elements, onAddElement, parentType, onUpdateElement, setS
     setShowOptions(!showOptions);
   };
 
-  const handleOptionClick = (type, parentElement) => {
-    onAddElement(parentElement.id, type);
+  const handleOptionClick = (type) => {
+    onAddElement(showOptions?.id, type);
     setShowOptions(false);
   };
 
@@ -89,7 +89,7 @@ function ElementItem({ elements, onAddElement, parentType, onUpdateElement, setS
             <div>
               {allowedTypes.length > 0 && (
                 <>
-                  <button onClick={handleAddClick}>+</button>
+                  <button onClick={(e) => handleAddClick(e, element)}>+</button>
                   <button className="toggle-btn">
                     {element.isOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
                   </button>

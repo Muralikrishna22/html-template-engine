@@ -1,5 +1,18 @@
 .viewer-container{
     border:2px solid white;
     flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.viewer-container .header{
+    display: flex;
+    justify-content: space-between;
+    padding:0 20px;
+    border-bottom: 2px solid white;
+}
+
+.viewer-container .content{
     overflow: hidden;
 }

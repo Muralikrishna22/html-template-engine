@@ -54,7 +54,61 @@ const toolBarFields = {
                 "label": "Opacity",
                 "property": "opacity",
                 "defaultValue": "1"
-            }
+            },
+            {
+                "field_type": "text",
+                "label": "Display",
+                "property": "display",
+                "defaultValue": "block"
+            },
+            {
+                "field_type": "text",
+                "label": "Flex direction",
+                "property": "flex-direction",
+                "defaultValue": "column"
+            },
+            {
+                "field_type": "text",
+                "label": "Justify content",
+                "property": "justify-content",
+                "defaultValue": "center"
+            },
+            {
+                "field_type": "text",
+                "label": "Align items",
+                "property": "align-items",
+                "defaultValue": "center"
+            },
+            {
+                "field_type": "text",
+                "label": "Position",
+                "property": "position",
+                "defaultValue": "relative"
+            },
+            {
+                "field_type": "text",
+                "label": "Left",
+                "property": "left",
+                "defaultValue": "0px"
+            },
+            {
+                "field_type": "text",
+                "label": "Right",
+                "property": "right",
+                "defaultValue": "0px"
+            },
+            {
+                "field_type": "text",
+                "label": "Top",
+                "property": "top",
+                "defaultValue": "0px"
+            },
+            {
+                "field_type": "text",
+                "label": "Bottom",
+                "property": "bottom",
+                "defaultValue": "0px"
+            },
         ]
     },
     a: {
