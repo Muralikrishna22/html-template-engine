@@ -27,13 +27,13 @@ const toolBarFields = {
             },
             {
                 "field_type": "text",
-                "label": "Padding",
+                "label": "Inner Space",
                 "property": "padding",
                 "defaultValue": "0"
             },
             {
                 "field_type": "text",
-                "label": "Margin",
+                "label": "Outer space",
                 "property": "margin",
                 "defaultValue": "0"
             },

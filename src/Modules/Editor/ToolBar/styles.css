@@ -9,7 +9,10 @@
 }
 
 .toolbar form{
-  overflow: scroll;
+  /* overflow: scroll; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .toolbar h3 {

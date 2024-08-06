@@ -1,0 +1,36 @@
+
+.input_with_dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    align-items: flex-start;
+}
+
+.dimension-input-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+    color: black;
+}
+
+.dimension-input-number {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100px;
+    font-size: 14px;
+}
+
+.dimension-input-select {
+    width: 100px;
+}
+
+.dimension-select__control {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.dimension-select__menu {
+    font-size: 14px;
+}

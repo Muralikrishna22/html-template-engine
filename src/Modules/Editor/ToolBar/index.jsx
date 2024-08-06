@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import toolBarFields from '../../../constants/toolsBarFields';
 import './styles.css'
+import SingleDimensionInput from '../../../components/InputControls/SingleDimensionInput';
+import MultiDimensionInput from '../../../components/InputControls/MultiDimensionInput';
+import Dropdown from '../../../components/InputControls/Dropdown';
 
 function Toolbar({ element, onUpdateElementProps }) {
   if (!element) return null;
@@ -21,6 +24,20 @@ function Toolbar({ element, onUpdateElementProps }) {
 
     return initialValues;
   }
+
+
+
+  //  ..........................................//////////////////
+  const [dimension, setDimension] = useState('px');
+  const options = [
+    { value: 'px', label: 'Inline' },
+    { value: 'rem', label: 'Float' },
+  ];
+
+  const handleSelectChange = (selectedOption) => {
+    setDimension(selectedOption.value);
+  };
+
 
   return (
     <Formik
@@ -72,8 +89,17 @@ function Toolbar({ element, onUpdateElementProps }) {
 
             <form>
 
+              <SingleDimensionInput />
+              <MultiDimensionInput />
+              <Dropdown
+                label="Container Position"
+                options={options}
+                value={dimension}
+                onChange={handleSelectChange}
+              />
+
               {/* Content Fields */}
-              {toolBarFields[element.type]?.content_fields?.map((field, index) => (
+              {/* {toolBarFields[element.type]?.content_fields?.map((field, index) => (
                 <div key={index} className="form-group">
                   <label>{field.label}:</label>
                   <Field
@@ -84,12 +110,12 @@ function Toolbar({ element, onUpdateElementProps }) {
                     onBlur={handleBlur}
                   />
                 </div>
-              ))}
+              ))} */}
 
 
 
               {/* Style Fields */}
-              {toolBarFields[element.type]?.styles_fields?.map((field, index) => (
+              {/* {toolBarFields[element.type]?.styles_fields?.map((field, index) => (
                 <div key={index} className="form-group">
                   <label>{field.label}:</label>
                   <Field
@@ -100,7 +126,7 @@ function Toolbar({ element, onUpdateElementProps }) {
                     onBlur={handleBlur}
                   />
                 </div>
-              ))}
+              ))} */}
 
             </form>
 
