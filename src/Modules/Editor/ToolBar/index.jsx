@@ -5,6 +5,9 @@ import './styles.css'
 import SingleDimensionInput from '../../../components/InputControls/SingleDimensionInput';
 import MultiDimensionInput from '../../../components/InputControls/MultiDimensionInput';
 import Dropdown from '../../../components/InputControls/Dropdown';
+import InputWithButtonList from '../../../components/InputControls/InputWithButtonList';
+import MultiDropdownWithLabels from '../../../components/InputControls/MultiDropdownWithLabels';
+import ColorPickerWithLabel from '../../../components/InputControls/ColorPickerWithLabel';
 
 function Toolbar({ element, onUpdateElementProps }) {
   if (!element) return null;
@@ -37,6 +40,19 @@ function Toolbar({ element, onUpdateElementProps }) {
   const handleSelectChange = (selectedOption) => {
     setDimension(selectedOption.value);
   };
+
+  const [selectedValue, setSelectedValue] = useState('');
+
+  const handleButtonClick = (value) => {
+    setSelectedValue(value);
+    console.log('Selected value:', value);
+  };
+
+  const buttons = [
+    { value: 'column', label: 'Column', icon: 'columnIcon' },
+    { value: 'row', label: 'Row', icon: 'rowIcon' },
+  ];
+
 
 
   return (
@@ -97,6 +113,9 @@ function Toolbar({ element, onUpdateElementProps }) {
                 value={dimension}
                 onChange={handleSelectChange}
               />
+              <InputWithButtonList label="Container Direction" buttons={buttons} onButtonClick={handleButtonClick} />
+              <MultiDropdownWithLabels/>
+              <ColorPickerWithLabel label="Pick a color:" />
 
               {/* Content Fields */}
               {/* {toolBarFields[element.type]?.content_fields?.map((field, index) => (

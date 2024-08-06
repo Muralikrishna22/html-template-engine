@@ -1,0 +1,29 @@
+.color-picker-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-label {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.color-display {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.color-box {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.color-input {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+}

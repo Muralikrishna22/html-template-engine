@@ -1,0 +1,46 @@
+.input-with-button-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  
+  .input-label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .button-list {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .button-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .button-icon img {
+    max-width: 24px;
+    max-height: 24px;
+  }
+  
+  .button-label {
+    font-size: 12px;
+    text-align: center;
+  }
+  

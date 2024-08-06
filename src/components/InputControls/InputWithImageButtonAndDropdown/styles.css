@@ -1,0 +1,27 @@
+.input-with-image-button-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .image-button {
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .image-button img {
+    max-width: 24px;
+    max-height: 24px;
+  }
+  
+  .dropdown {
+    width: 150px;
+  }
+  

@@ -37,12 +37,13 @@ const Editor = () => {
         selectedElement={selectedElement}
         setSelectedElement={setSelectedElement}
       />
+      
+      <Viewer rootElements={rootElements} />
+
       <Toolbar
         element={selectedElement}
         onUpdateElementProps={updateElementprops}
       />
-
-      <Viewer rootElements={rootElements} />
     </div>
   );
 }
