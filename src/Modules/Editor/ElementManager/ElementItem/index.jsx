@@ -99,6 +99,7 @@ function ElementItem({ elements, onAddElement, parentType, onUpdateElement, setS
           </div>
           {element.children && element.isOpen && (
             <ElementItem
+              key={element.id}
               elements={element.children}
               onAddElement={onAddElement}
               parentType={element.type}

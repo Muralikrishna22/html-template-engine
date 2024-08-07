@@ -79,8 +79,6 @@ function Toolbar({ element, onUpdateElementProps }) {
             
             <form>
 
-              <InputController type={inputTypes.COLOR_PICKER_WITH_LABEL} />
-
               {/* Content Fields */}
               {/* {toolBarFields[element.type]?.content_fields?.map((field, index) => (
                 <div key={index} className="form-group">
@@ -99,7 +97,9 @@ function Toolbar({ element, onUpdateElementProps }) {
 
               {/* Style Fields */}
               {toolBarFields[element.type]?.styles_fields?.map((field, index) => (
-                <InputController fieldDetails={field} />
+                <div key={index}>
+                  <InputController fieldDetails={field} formikFunctions={formikFunctions} />
+                </div>
               ))}
 
             </form>

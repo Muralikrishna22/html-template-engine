@@ -6,7 +6,7 @@ import Viewer from './Viewer';
 
 const Editor = () => {
   const [rootElements, setRootElements] = useState([
-      { id: Date.now(), type: 'div', name: 'Template', children: [], style: {}, values:{} }
+      { id: Date.now(), type: 'div', name: 'Template', children: [], style: {'overflow':'hidden'}, values:{} }
   ]);
   const [selectedElement, setSelectedElement] = useState(null);
 
@@ -40,10 +40,10 @@ const Editor = () => {
       
       <Viewer rootElements={rootElements} />
 
-      <Toolbar
+      {selectedElement && <Toolbar
         element={selectedElement}
         onUpdateElementProps={updateElementprops}
-      />
+      />}
     </div>
   );
 }

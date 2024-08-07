@@ -2,19 +2,33 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import './styles.css';
 
-const InputWithDropdown = ({ onValueChange }) => {
+const SingleDimensionInput = ({ fieldDetails, formikFunctions, onChange }) => {
+  const {
+    values,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    setFieldValue,
+  } = formikFunctions;
+
   const [number, setNumber] = useState('');
   const [unit, setUnit] = useState('px');
 
   const handleNumberChange = (e) => {
     const value = e.target.value;
     setNumber(value);
-    onValueChange(`${value}${unit}`);
+    setFieldValue(fieldDetails.property , `${value}${unit}`);
+    if(onChange){
+      onChange(value, unit)
+    }
   };
 
   const handleUnitChange = (selectedOption) => {
     setUnit(selectedOption.value);
-    onValueChange(`${number}${selectedOption.value}`);
+    setFieldValue(fieldDetails.property, `${number}${selectedOption.value}`);
+    if(onChange){
+      onChange(number, selectedOption.value)
+    }
   };
 
   const unitOptions = [
@@ -26,7 +40,7 @@ const InputWithDropdown = ({ onValueChange }) => {
 
   return (
     <div className="input_with_dropdown">
-      <label>Height </label>
+      <label>{fieldDetails.label}</label>
 
       <div className='dimension-input-container'>
         <input
@@ -48,4 +62,4 @@ const InputWithDropdown = ({ onValueChange }) => {
   );
 };
 
-export default InputWithDropdown;
+export default SingleDimensionInput;

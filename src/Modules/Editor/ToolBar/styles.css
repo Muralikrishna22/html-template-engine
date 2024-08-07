@@ -10,8 +10,7 @@
 .toolbar .header{
   background-color: black;
   height: 60px;
-  border-left: 1px solid #383838;
-  
+  z-index: 1;
 }
 
 .toolbar form{

@@ -2,14 +2,25 @@ import React, { useState } from 'react';
 import SingleDimensionInput from '../SingleDimensionInput'
 import FourSideDimensionInput from '../FourSideDimensionInput';
 
-const MultiDimensionInput = () => {
-  const [singleValue, setSingleValue] = useState('');
-  const [fourSideValue, setFourSideValue] = useState('');
+const MultiDimensionInput = ({ fieldDetails, formikFunctions }) => {
+  const [singleDimensionValues, setSingleDimensionValues] = useState('');
+
+  const updateFourDimensions = (value, dimen) => {
+    setSingleDimensionValues({value, dimen})
+  }
 
   return (
     <div>
-      <SingleDimensionInput onChange={setSingleValue} />
-      <FourSideDimensionInput onChange={setFourSideValue} />
+      <SingleDimensionInput
+        fieldDetails={fieldDetails}
+        formikFunctions={formikFunctions}
+        onChange={updateFourDimensions}
+      />
+      <FourSideDimensionInput
+        fieldDetails={fieldDetails}
+        formikFunctions={formikFunctions}
+        singleDimensionValues={singleDimensionValues}
+      />
     </div>
   );
 };

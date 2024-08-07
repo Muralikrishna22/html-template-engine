@@ -82,6 +82,8 @@ function ElementManager({
 
   return (
     <div className="element-manager">
+      <div className="header"> </div>
+      
       <ElementItem
         elements={rootElements}
         onAddElement={addElement}

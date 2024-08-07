@@ -13,8 +13,18 @@
     padding: 0 20px;
     background: black;
     height: 60px;
+    border-left: 1px solid #383838;
+    border-right: 1px solid #383838;
+    align-items: center;
 }
 
 .viewer-container .content{
     overflow: hidden;
+}
+
+.viewer-container button{
+    height: fit-content;
+    width: auto;
+    background-color: #007bff;
+    border: #007bff;
 }

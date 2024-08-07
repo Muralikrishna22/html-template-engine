@@ -38,24 +38,26 @@ const InputController = ({
 
     switch (fieldDetails?.field_type) {
         case inputTypes.SINGLE_DIMENSION_INPUT:
-            return <SingleDimensionInput />
+            return <SingleDimensionInput fieldDetails={fieldDetails} formikFunctions={formikFunctions} />
         case inputTypes.DROPDOWN:
             return <Dropdown
                 label="Container Position"
                 options={options}
                 value={dimension}
                 onChange={handleSelectChange}
+                fieldDetails={fieldDetails} formikFunctions={formikFunctions} 
             />
         case inputTypes.MULTI_DIMENSION_INPUT:
-            return <MultiDimensionInput />
+            return <MultiDimensionInput fieldDetails={fieldDetails} formikFunctions={formikFunctions} />
         case inputTypes.INPUT_WITH_BUTTON_LIST:
-            return <InputWithButtonList label="Container Direction" buttons={buttons} onButtonClick={handleButtonClick} />
+            return <InputWithButtonList fieldDetails={fieldDetails} formikFunctions={formikFunctions}  label="Container Direction" buttons={buttons} onButtonClick={handleButtonClick} />
         case inputTypes.MULTI_DROPDOWN_WITH_LABEL:
-            return <MultiDropdownWithLabels />
+            return <MultiDropdownWithLabels fieldDetails={fieldDetails} formikFunctions={formikFunctions}  />
         case inputTypes.COLOR_PICKER_WITH_LABEL:
-            return <ColorPickerWithLabel label="Pick a color:" />
+            return <ColorPickerWithLabel fieldDetails={fieldDetails} formikFunctions={formikFunctions} />
         case inputTypes.TEXT_INPUT_WITH_LABEL:
             return <TextInputWithLabel
+            fieldDetails={fieldDetails} formikFunctions={formikFunctions} 
                 label="Your Name"
                 value={'inputValue'}
                 onChange={() => { }}

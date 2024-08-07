@@ -55,7 +55,7 @@ const toolBarFields = {
                 "field_type": inputTypes.SINGLE_DIMENSION_INPUT,
                 "label": "Opacity",
                 "property": "opacity",
-                "defaultValue": "1"
+                "defaultValue": "1",
             },
             {
                 "field_type": inputTypes.DROPDOWN,
