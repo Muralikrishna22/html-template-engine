@@ -1,16 +1,18 @@
 .viewer-container{
-    border:2px solid white;
     flex: 1;
     position: relative;
     display: flex;
     flex-direction: column;
+    background-image: url('../../../assets/transparent_white.avif');
+    background-size: cover;
 }
 
 .viewer-container .header{
     display: flex;
     justify-content: space-between;
-    padding:0 20px;
-    border-bottom: 2px solid white;
+    padding: 0 20px;
+    background: black;
+    height: 60px;
 }
 
 .viewer-container .content{

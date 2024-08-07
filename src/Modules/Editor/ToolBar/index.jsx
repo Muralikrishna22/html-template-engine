@@ -73,9 +73,12 @@ function Toolbar({ element, onUpdateElementProps }) {
 
         return (
           <div className="toolbar">
-            <h3>{element.name} Properties/Styles</h3>
-
+            <div className='header'>
+              <h3>{element.name} Properties/Styles</h3>
+            </div>
+            
             <form>
+
               <InputController type={inputTypes.COLOR_PICKER_WITH_LABEL} />
 
               {/* Content Fields */}
@@ -95,18 +98,9 @@ function Toolbar({ element, onUpdateElementProps }) {
 
 
               {/* Style Fields */}
-              {/* {toolBarFields[element.type]?.styles_fields?.map((field, index) => (
-                <div key={index} className="form-group">
-                  <label>{field.label}:</label>
-                  <Field
-                    type={field.field_type}
-                    name={field.property}
-                    value={values[field.property]}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                </div>
-              ))} */}
+              {toolBarFields[element.type]?.styles_fields?.map((field, index) => (
+                <InputController fieldDetails={field} />
+              ))}
 
             </form>
 

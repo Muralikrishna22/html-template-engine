@@ -6,7 +6,7 @@ import Viewer from './Viewer';
 
 const Editor = () => {
   const [rootElements, setRootElements] = useState([
-      { id: Date.now(), type: 'div', name: 'Root', children: [], style: {}, values:{} }
+      { id: Date.now(), type: 'div', name: 'Template', children: [], style: {}, values:{} }
   ]);
   const [selectedElement, setSelectedElement] = useState(null);
 

@@ -6,7 +6,8 @@ const inputTypes = {
     INPUT_WITH_IMAGE_BUTTON_AND_DROPDOWN:'inputWithImageButtonAndDropdown',
     MULTI_DIMENSION_INPUT:'multiDimesionInput',
     MULTI_DROPDOWN_WITH_LABEL:'multiDropdownWithLabel',
-    SINGLE_DIMENSION_INPUT:'singleDimensionINput'
+    SINGLE_DIMENSION_INPUT:'singleDimensionINput',
+    TEXT_INPUT_WITH_LABEL:'textInputWithLabel'
 }
 
 export default inputTypes

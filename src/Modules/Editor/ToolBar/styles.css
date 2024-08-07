@@ -1,11 +1,17 @@
 .toolbar {
-  border: 1px solid #ddd;
-  padding: 15px;
   border-radius: 5px;
   width: 400px;
   box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  background-color: #1e1e1e;
+}
+
+.toolbar .header{
+  background-color: black;
+  height: 60px;
+  border-left: 1px solid #383838;
+  
 }
 
 .toolbar form{
@@ -13,13 +19,12 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding: 15px;
 }
 
 .toolbar h3 {
-  margin-top: 0;
   font-size: 1.2em;
   font-weight: bold;
-  margin-bottom: 15px;
 }
 
 .form-group {

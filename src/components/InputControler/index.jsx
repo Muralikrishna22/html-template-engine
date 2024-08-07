@@ -6,9 +6,10 @@ import Dropdown from './Dropdown';
 import InputWithButtonList from './InputWithButtonList';
 import MultiDropdownWithLabels from './MultiDropdownWithLabels';
 import ColorPickerWithLabel from './ColorPickerWithLabel';
+import TextInputWithLabel from './TextInputWithLabel';
 
 const InputController = ({
-    type,
+    fieldDetails,
     formikFunctions
 }) => {
 
@@ -35,7 +36,7 @@ const InputController = ({
         { value: 'row', label: 'Row', icon: 'rowIcon' },
     ];
 
-    switch (type) {
+    switch (fieldDetails?.field_type) {
         case inputTypes.SINGLE_DIMENSION_INPUT:
             return <SingleDimensionInput />
         case inputTypes.DROPDOWN:
@@ -53,6 +54,13 @@ const InputController = ({
             return <MultiDropdownWithLabels />
         case inputTypes.COLOR_PICKER_WITH_LABEL:
             return <ColorPickerWithLabel label="Pick a color:" />
+        case inputTypes.TEXT_INPUT_WITH_LABEL:
+            return <TextInputWithLabel
+                label="Your Name"
+                value={'inputValue'}
+                onChange={() => { }}
+                placeholder="Enter your name"
+            />
         default:
             return <></>
     }
