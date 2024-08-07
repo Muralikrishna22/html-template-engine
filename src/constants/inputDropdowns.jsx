@@ -56,63 +56,63 @@ const dropdownOptions = {
         'custom': [
             {
                 label: 'Top - Left',
-                value: {
+                style: {
                     'justify-content': 'flex-start',
                     'align-items':'flex-start'
                 },
             },
             {
                 label: 'Top - center',
-                value: {
+                style: {
                     'justify-content': 'flex-start',
                     'align-items':'center'
                 },
             },
             {
                 label: 'Top - Left',
-                value: {
+                style: {
                     'justify-content': 'flex-start',
                     'align-items':'flex-end'
                 },
             },
             {
                 label: 'Mid - Left',
-                value: {
+                style: {
                     'justify-content': 'center',
                     'align-items':'flex-start'
                 },
             },
             {
                 label: 'Mid - center',
-                value: {
+                style: {
                     'justify-content': 'center',
                     'align-items':'flex-end'
                 },
             },
             {
                 label: 'Mid - Right',
-                value: {
+                style: {
                     'justify-content': 'center',
                     'align-items':'flex-end'
                 },
             },
             {
                 label: 'Bottom - Left',
-                value: {
+                style: {
                     'justify-content': 'flex-end',
                     'align-items':'flex-start'
                 },
             },
             {
                 label: 'Bottom - center',
-                value: {
+                style: {
                     'justify-content': 'flex-end',
                     'align-items':'center'
                 },
             },
             {
                 label: 'Bottom - Right',
-                value: {
+                style: {
                     'justify-content': 'flex-end',
                     'align-items':'flex-end'
                 },
@@ -120,22 +120,22 @@ const dropdownOptions = {
         ],
         'space-evenly': [
             {
-                label: 'left',
-                value: {
+                label: 'top',
+                style: {
                     'justify-content': 'space-evenly',
                     'align-items':'flex-start'
                 },
             },
             {
-                label: 'center',
-                value: {
+                label: 'Middle',
+                style: {
                     'justify-content': 'space-evenly',
                     'align-items':'center'
                 },
             },
             {
-                label: 'Right',
-                value: {
+                label: 'Bottom',
+                style: {
                     'justify-content': 'space-evenly',
                     'align-items':'felx-end'
                 },
@@ -143,22 +143,22 @@ const dropdownOptions = {
         ],
         'space-between': [
             {
-                label: 'left',
-                value: {
+                label: 'Top',
+                style: {
                     'justify-content': 'space-between',
                     'align-items':'flex-start'
                 },
             },
             {
-                label: 'center',
-                value: {
+                label: 'Middle',
+                style: {
                     'justify-content': 'space-between',
                     'align-items':'center'
                 },
             },
             {
-                label: 'Right',
-                value: {
+                label: 'Bottom',
+                style: {
                     'justify-content': 'space-between',
                     'align-items':'felx-end'
                 },
@@ -169,63 +169,63 @@ const dropdownOptions = {
         'custom': [
             {
                 label: 'Top - Left',
-                value: {
+                style: {
                     'justify-content': 'flex-start',
                     'align-items':'flex-start'
                 },
             },
             {
                 label: 'Top - center',
-                value: {
+                style: {
                     'justify-content': 'center',
                     'align-items':'flex-start'
                 },
             },
             {
                 label: 'Top - Left',
-                value: {
+                style: {
                     'justify-content': 'flex-end',
                     'align-items':'flex-start'
                 },
             },
             {
                 label: 'Mid - Left',
-                value: {
+                style: {
                     'justify-content': 'flex-start',
                     'align-items':'center'
                 },
             },
             {
                 label: 'Mid - center',
-                value: {
+                style: {
                     'justify-content': 'flex-end',
                     'align-items':'center'
                 },
             },
             {
                 label: 'Mid - Right',
-                value: {
+                style: {
                     'justify-content': 'flex-end',
                     'align-items':'center'
                 },
             },
             {
                 label: 'Bottom - Left',
-                value: {
+                style: {
                     'justify-content': 'flex-start',
                     'align-items':'flex-end'
                 },
             },
             {
                 label: 'Bottom - center',
-                value: {
+                style: {
                     'justify-content': 'center',
                     'align-items':'flex-end'
                 },
             },
             {
                 label: 'Bottom - Right',
-                value: {
+                style: {
                     'justify-content': 'flex-end',
                     'align-items':'flex-end'
                 },
@@ -234,21 +234,21 @@ const dropdownOptions = {
         'space-evenly': [
             {
                 label: 'left',
-                value: {
+                style: {
                     'justify-content': 'space-evenly',
                     'align-items':'flex-start'
                 },
             },
             {
                 label: 'center',
-                value: {
+                style: {
                     'justify-content': 'space-evenly',
                     'align-items':'center'
                 },
             },
             {
                 label: 'Right',
-                value: {
+                style: {
                     'justify-content': 'space-evenly',
                     'align-items':'felx-end'
                 },
@@ -257,21 +257,21 @@ const dropdownOptions = {
         'space-between': [
             {
                 label: 'left',
-                value: {
+                style: {
                     'justify-content': 'space-between',
                     'align-items':'flex-start'
                 },
             },
             {
                 label: 'center',
-                value: {
+                style: {
                     'justify-content': 'space-between',
                     'align-items':'center'
                 },
             },
             {
                 label: 'Right',
-                value: {
+                style: {
                     'justify-content': 'space-between',
                     'align-items':'felx-end'
                 },
@@ -280,3 +280,5 @@ const dropdownOptions = {
       },
     }
 }
+
+export default dropdownOptions

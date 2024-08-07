@@ -1,15 +1,20 @@
 import React from 'react';
 import './styles.css';
 
-const InputWithButtonList = ({ label, buttons, onButtonClick }) => {
+const InputWithButtonList = ({fieldDetails, formikFunctions}) => {
+  const {
+    values,
+    setFieldValue,
+  } = formikFunctions;
+
   return (
     <div className="input-with-button-list">
-      <label className="input-label">{label}</label>
+      <label className="input-label">{fieldDetails.label}</label>
       <div className="button-list">
-        {buttons.map((button) => (
-          <div key={button.value} className="button-item" onClick={() => onButtonClick(button.value)}>
+        {fieldDetails?.options?.map((button) => (
+          <div key={button.value} className="button-item" onClick={() => setFieldValue(fieldDetails.property, button.value)}>
             <div className="button-icon">
-              <img src={button.icon} alt={button.label} />
+              <img src={button?.icon} alt={button.label} />
             </div>
             <span className="button-label">{button.label}</span>
           </div>

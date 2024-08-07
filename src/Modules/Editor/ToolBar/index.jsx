@@ -39,6 +39,9 @@ function Toolbar({ element, onUpdateElementProps }) {
         })
 
         toolBarFields[element.type]?.styles_fields?.forEach((obj) => {
+          if(values[obj.property]?.style){
+            formValues.styles = {...formValues.styles, ...values[obj.property]?.style}
+          }
           formValues.styles[obj.property] = values[obj.property]
         })
 

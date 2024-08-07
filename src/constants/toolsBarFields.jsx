@@ -1,3 +1,4 @@
+import dropdownOptions from './inputDropdowns';
 import inputTypes from './inputTypes'
 
 const toolBarFields = {  
@@ -52,28 +53,31 @@ const toolBarFields = {
             //     "defaultValue": "none"
             // },
             {
-                "field_type": inputTypes.SINGLE_DIMENSION_INPUT,
+                "field_type": inputTypes.DROPDOWN,
                 "label": "Opacity",
                 "property": "opacity",
-                "defaultValue": "1",
+                "defaultValue": 1,
+                "options":dropdownOptions.OPACITY
             },
             {
                 "field_type": inputTypes.DROPDOWN,
                 "label": "Items Direction in container",
                 "property": "display",
-                "defaultValue": "block"
+                "defaultValue": "flex"
             },
             {
                 "field_type": inputTypes.INPUT_WITH_BUTTON_LIST,
                 "label": "Flex direction",
                 "property": "flex-direction",
-                "defaultValue": "column"
+                "defaultValue": "column",
+                "options":dropdownOptions.FLEX_DIRECTION
             },
             {
                 "field_type": inputTypes.MULTI_DROPDOWN_WITH_LABEL,
-                "label": "Justify content",
-                "property": "justify-content",
-                "defaultValue": "center"
+                "label": "Align Items",
+                "property": "alignItems",
+                "defaultValue": "Top - Left",
+                "options": dropdownOptions.ALIGN_ITEMS
             },
             // {
             //     "field_type": "text",
