@@ -2,12 +2,8 @@ import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import toolBarFields from '../../../constants/toolsBarFields';
 import './styles.css'
-import SingleDimensionInput from '../../../components/InputControls/SingleDimensionInput';
-import MultiDimensionInput from '../../../components/InputControls/MultiDimensionInput';
-import Dropdown from '../../../components/InputControls/Dropdown';
-import InputWithButtonList from '../../../components/InputControls/InputWithButtonList';
-import MultiDropdownWithLabels from '../../../components/InputControls/MultiDropdownWithLabels';
-import ColorPickerWithLabel from '../../../components/InputControls/ColorPickerWithLabel';
+import InputController from '../../../components/InputControler';
+import inputTypes from '../../../constants/inputTypes';
 
 function Toolbar({ element, onUpdateElementProps }) {
   if (!element) return null;
@@ -28,30 +24,6 @@ function Toolbar({ element, onUpdateElementProps }) {
     return initialValues;
   }
 
-
-
-  //  ..........................................//////////////////
-  const [dimension, setDimension] = useState('px');
-  const options = [
-    { value: 'px', label: 'Inline' },
-    { value: 'rem', label: 'Float' },
-  ];
-
-  const handleSelectChange = (selectedOption) => {
-    setDimension(selectedOption.value);
-  };
-
-  const [selectedValue, setSelectedValue] = useState('');
-
-  const handleButtonClick = (value) => {
-    setSelectedValue(value);
-    console.log('Selected value:', value);
-  };
-
-  const buttons = [
-    { value: 'column', label: 'Column', icon: 'columnIcon' },
-    { value: 'row', label: 'Row', icon: 'rowIcon' },
-  ];
 
 
 
@@ -104,18 +76,7 @@ function Toolbar({ element, onUpdateElementProps }) {
             <h3>{element.name} Properties/Styles</h3>
 
             <form>
-
-              <SingleDimensionInput />
-              <MultiDimensionInput />
-              <Dropdown
-                label="Container Position"
-                options={options}
-                value={dimension}
-                onChange={handleSelectChange}
-              />
-              <InputWithButtonList label="Container Direction" buttons={buttons} onButtonClick={handleButtonClick} />
-              <MultiDropdownWithLabels/>
-              <ColorPickerWithLabel label="Pick a color:" />
+              <InputController type={inputTypes.COLOR_PICKER_WITH_LABEL} />
 
               {/* Content Fields */}
               {/* {toolBarFields[element.type]?.content_fields?.map((field, index) => (
