@@ -12,7 +12,7 @@ const InputWithButtonList = ({fieldDetails, formikFunctions}) => {
       <label className="input-label">{fieldDetails.label}</label>
       <div className="button-list">
         {fieldDetails?.options?.map((button) => (
-          <div key={button.value} className="button-item" onClick={() => setFieldValue(fieldDetails.property, button.value)}>
+          <div key={button.value} className="button-item" onClick={() => setFieldValue(fieldDetails.property, button)}>
             <div className="button-icon">
               <img src={button?.icon} alt={button.label} />
             </div>

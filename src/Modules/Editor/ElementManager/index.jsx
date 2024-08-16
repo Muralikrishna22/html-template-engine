@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ElementItem from './ElementItem';
 import Toolbar from '../ToolBar';
 import './styles.css';
+import { getRandomColor } from '../../../utils';
 
 function ElementManager({
   rootElements,
@@ -16,8 +17,9 @@ function ElementManager({
       type: type,
       name: type.toUpperCase(),
       children: ['div', 'a', 'p'].includes(type) ? [] : null,
-      style: {},
-      values:{}
+      style: {background:getRandomColor(), height:'50px', width:'80%'},
+      values: {},
+      toolbarValues: {background:getRandomColor(), height:'50px', width:'80%'},
     };
     if (parentId === null) {
       setRootElements([...rootElements, newElement]);
@@ -60,30 +62,31 @@ function ElementManager({
   };
 
   const onToggleOpen = (id) => {
-    const toggleElementOpen = (elementsList) => {
-      return elementsList.map((element) => {
-        if (element.id === id) {
-          return { ...element, isOpen: !element.isOpen };
-        }
+    if (id !== rootElements?.[0]?.id) {
+      const toggleElementOpen = (elementsList) => {
+        return elementsList.map((element) => {
+          if (element.id === id) {
+            return { ...element, isOpen: !element.isOpen };
+          }
 
-        if (element.children && element.children.length > 0) {
-          return {
-            ...element,
-            children: toggleElementOpen(element.children),
-          };
-        }
+          if (element.children && element.children.length > 0) {
+            return {
+              ...element,
+              children: toggleElementOpen(element.children),
+            };
+          }
 
-        return element;
-      });
-    };
-
-    setRootElements(toggleElementOpen(rootElements));
+          return element;
+        });
+      };
+      setRootElements(toggleElementOpen(rootElements));
+    }
   };
 
   return (
     <div className="element-manager">
       <div className="header"> </div>
-      
+
       <ElementItem
         elements={rootElements}
         onAddElement={addElement}

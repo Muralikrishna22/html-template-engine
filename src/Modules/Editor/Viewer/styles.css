@@ -20,6 +20,7 @@
 
 .viewer-container .content{
     overflow: hidden;
+    text-align: -webkit-center;
 }
 
 .viewer-container button{

@@ -15,7 +15,7 @@ const InputWithImageButtonAndDropdown = ({fieldDetails, formikFunctions, options
       </button>
       <Select
         className="dropdown"
-        value={values[fieldDetails.property]}
+        value={options.find(opt => values[fieldDetails.property].label === opt.label)}
         onChange={(option) => setFieldValue(fieldDetails.property, option)}
         options={options}
         getOptionLabel={(option) => option.label}

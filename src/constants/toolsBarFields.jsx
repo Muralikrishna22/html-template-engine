@@ -24,8 +24,8 @@ const toolBarFields = {
             },
             {
                 "field_type": inputTypes.COLOR_PICKER_WITH_LABEL,
-                "label": "Border Color",
-                "property": "border-color",
+                "label": "Color",
+                "property": "color",
                 "defaultValue": "#000000"
             },
             {
@@ -59,12 +59,12 @@ const toolBarFields = {
                 "defaultValue": 1,
                 "options":dropdownOptions.OPACITY
             },
-            {
-                "field_type": inputTypes.DROPDOWN,
-                "label": "Items Direction in container",
-                "property": "display",
-                "defaultValue": "flex"
-            },
+            // {
+            //     "field_type": inputTypes.DROPDOWN,
+            //     "label": "Items Direction in container",
+            //     "property": "display",
+            //     "defaultValue": "flex"
+            // },
             {
                 "field_type": inputTypes.INPUT_WITH_BUTTON_LIST,
                 "label": "Flex direction",

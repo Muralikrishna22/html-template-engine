@@ -1,65 +1,52 @@
-import React, { useState } from 'react';
-import { Formik, Form, Field } from 'formik';
-import toolBarFields from '../../../constants/toolsBarFields';
-import './styles.css'
-import InputController from '../../../components/InputControler';
-import inputTypes from '../../../constants/inputTypes';
+import React, { useEffect, useState } from "react";
+import { Formik, Form, Field } from "formik";
+import toolBarFields from "../../../constants/toolsBarFields";
+import "./styles.css";
+import InputController from "../../../components/InputControler";
+import inputTypes from "../../../constants/inputTypes";
 
 function Toolbar({ element, onUpdateElementProps }) {
   if (!element) return null;
 
   function getInitialValues() {
-    const initialValues = {};
-
-    // Set initial values for content fields
-    toolBarFields[element.type]?.content_fields?.forEach((field) => {
-      initialValues[field.property] = element?.values?.[field.property] || field.defaultValue || '';
-    });
-
-    // Set initial values for style fields
-    toolBarFields[element.type]?.styles_fields?.forEach((field) => {
-      initialValues[field.property] = element?.style?.[field.property] || field.defaultValue || '';
-    });
-
-    return initialValues;
+    return element.toolbarValues || {};
   }
-
-
-
 
   return (
     <Formik
       initialValues={getInitialValues()}
       enableReinitialize={true}
       validate={(values) => {
-        let formValues = { values: {}, styles: {} }
+        let formValues = { values: {}, styles: {}, toolbarValues: values };
 
         toolBarFields[element.type]?.content_fields?.forEach((obj) => {
-          formValues.values[obj.property] = values[obj.property]
-        })
+          formValues.values[obj.property] = values[obj.property];
+        });
 
         toolBarFields[element.type]?.styles_fields?.forEach((obj) => {
-          if(values[obj.property]?.style){
-            formValues.styles = {...formValues.styles, ...values[obj.property]?.style}
+          if (values[obj.property]?.style) {
+            formValues.styles = {
+              ...formValues.styles,
+              ...values[obj.property]?.style,
+            };
+          } else {
+            formValues.styles[obj.property] = values[obj.property];
           }
-          formValues.styles[obj.property] = values[obj.property]
-        })
+        });
 
         onUpdateElementProps(formValues);
-        return {}
+        return {};
       }}
-
       onSubmit={(values, { setSubmitting }) => {
-
-        let formValues = { values: {}, styles: {} }
+        let formValues = { values: {}, styles: {} };
 
         toolBarFields[element.type]?.content_fields?.forEach((obj) => {
-          formValues.values[obj.property] = values[obj.property]
-        })
+          formValues.values[obj.property] = values[obj.property];
+        });
 
         toolBarFields[element.type]?.styles_fields?.forEach((obj) => {
-          formValues.styles[obj.property] = values[obj.property]
-        })
+          formValues.styles[obj.property] = values[obj.property];
+        });
 
         onUpdateElementProps(formValues); // Pass the updated styles back to the parent component
         setSubmitting(false);
@@ -76,12 +63,11 @@ function Toolbar({ element, onUpdateElementProps }) {
 
         return (
           <div className="toolbar">
-            <div className='header'>
+            <div className="header">
               <h3>{element.name} Properties/Styles</h3>
             </div>
-            
-            <form>
 
+            <form>
               {/* Content Fields */}
               {/* {toolBarFields[element.type]?.content_fields?.map((field, index) => (
                 <div key={index} className="form-group">
@@ -96,19 +82,20 @@ function Toolbar({ element, onUpdateElementProps }) {
                 </div>
               ))} */}
 
-
-
               {/* Style Fields */}
-              {toolBarFields[element.type]?.styles_fields?.map((field, index) => (
-                <div key={index}>
-                  <InputController fieldDetails={field} formikFunctions={formikFunctions} />
-                </div>
-              ))}
-
+              {toolBarFields[element.type]?.styles_fields?.map(
+                (field, index) => (
+                  <div key={index}>
+                    <InputController
+                      fieldDetails={field}
+                      formikFunctions={formikFunctions}
+                      element={element}
+                    />
+                  </div>
+                )
+              )}
             </form>
-
           </div>
-
         );
       }}
     </Formik>

@@ -44,11 +44,19 @@ const dropdownOptions = {
     FLEX_DIRECTION: [
         {
             label: 'Column',
-            value: 'column'
+            value: 'column',
+            style:{
+                display: 'flex',
+                'flex-direction': 'column'
+            }
         },
         {
             label: 'Row',
-            value: 'row'
+            value: 'row',
+            style:{
+                display: 'flex',
+                'flex-direction': 'row'
+            }
         },
     ],
     ALIGN_ITEMS: {
@@ -56,6 +64,7 @@ const dropdownOptions = {
         'custom': [
             {
                 label: 'Top - Left',
+                value: 'top-left',
                 style: {
                     'justify-content': 'flex-start',
                     'align-items':'flex-start'
@@ -63,13 +72,15 @@ const dropdownOptions = {
             },
             {
                 label: 'Top - center',
+                value: 'top-center',
                 style: {
                     'justify-content': 'flex-start',
                     'align-items':'center'
                 },
             },
             {
-                label: 'Top - Left',
+                label: 'Top - Right',
+                value: 'top-right',
                 style: {
                     'justify-content': 'flex-start',
                     'align-items':'flex-end'
@@ -77,6 +88,7 @@ const dropdownOptions = {
             },
             {
                 label: 'Mid - Left',
+                value: 'min-left',
                 style: {
                     'justify-content': 'center',
                     'align-items':'flex-start'
@@ -84,6 +96,7 @@ const dropdownOptions = {
             },
             {
                 label: 'Mid - center',
+                value: 'min-center',
                 style: {
                     'justify-content': 'center',
                     'align-items':'flex-end'
@@ -91,6 +104,7 @@ const dropdownOptions = {
             },
             {
                 label: 'Mid - Right',
+                value: 'min-right',
                 style: {
                     'justify-content': 'center',
                     'align-items':'flex-end'
@@ -98,6 +112,7 @@ const dropdownOptions = {
             },
             {
                 label: 'Bottom - Left',
+                value: 'bottom-left',
                 style: {
                     'justify-content': 'flex-end',
                     'align-items':'flex-start'
@@ -105,6 +120,7 @@ const dropdownOptions = {
             },
             {
                 label: 'Bottom - center',
+                value: 'bottom-center',
                 style: {
                     'justify-content': 'flex-end',
                     'align-items':'center'
@@ -112,6 +128,7 @@ const dropdownOptions = {
             },
             {
                 label: 'Bottom - Right',
+                value: 'bottom-right',
                 style: {
                     'justify-content': 'flex-end',
                     'align-items':'flex-end'
