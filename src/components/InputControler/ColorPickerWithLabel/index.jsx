@@ -1,20 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './styles.css';
 
 const ColorPickerWithLabel = ({ fieldDetails, formikFunctions }) => {
-  const [color, setColor] = useState('#000000');
-  const {
-    values,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    setFieldValue,
-  } = formikFunctions;
+  const { values, setFieldValue } = formikFunctions;
+  const colour = values[fieldDetails.property] || '#000000';
 
   const handleColorChange = (event) => {
     const newColor = event.target.value;
-    setColor(newColor);
-    setFieldValue(fieldDetails.property , newColor);
+    setFieldValue(fieldDetails.property, newColor);
   };
 
   return (
@@ -23,16 +16,16 @@ const ColorPickerWithLabel = ({ fieldDetails, formikFunctions }) => {
         {fieldDetails?.label}
       </label>
       <div className="color-display">
-        <div 
-          className="color-box" 
-          style={{ backgroundColor: color }} 
+        <div
+          className="color-box"
+          style={{ backgroundColor: colour }}
           onClick={() => document.getElementById(fieldDetails.property).click()}
         />
       </div>
       <input
         id={fieldDetails.property}
         type="color"
-        value={color}
+        value={colour}
         onChange={handleColorChange}
         className="color-input"
       />

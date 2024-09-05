@@ -4,6 +4,7 @@ import ElementItem from './ElementItem';
 import Toolbar from '../ToolBar';
 import './styles.css';
 import { getRandomColor } from '../../../utils';
+import { elementTypes } from '../../../constants/elementTypes';
 
 function ElementManager({
   rootElements,
@@ -12,14 +13,15 @@ function ElementManager({
   setSelectedElement
 }) {
   const addElement = (parentId, type) => {
+    let randomBg = getRandomColor()
     const newElement = {
       id: Date.now(),
       type: type,
-      name: type.toUpperCase(),
+      name: (elementTypes?.find((obj) => obj.type === type)?.name || type),
       children: ['div', 'a', 'p'].includes(type) ? [] : null,
-      style: {background:getRandomColor(), height:'50px', width:'80%'},
+      style: {'background-color':randomBg, 'min-height':'50px', width:'100%', 'box-sizing': 'border-box'},
       values: {},
-      toolbarValues: {background:getRandomColor(), height:'50px', width:'80%'},
+      toolbarValues: {'background-color':randomBg, 'min-height':'50px', width:'100%','box-sizing': 'border-box'},
     };
     if (parentId === null) {
       setRootElements([...rootElements, newElement]);

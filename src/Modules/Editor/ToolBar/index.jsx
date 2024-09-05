@@ -12,6 +12,8 @@ function Toolbar({ element, onUpdateElementProps }) {
     return element.toolbarValues || {};
   }
 
+  // console.log(getInitialValues())
+
   return (
     <Formik
       initialValues={getInitialValues()}
@@ -84,7 +86,9 @@ function Toolbar({ element, onUpdateElementProps }) {
 
               {/* Style Fields */}
               {toolBarFields[element.type]?.styles_fields?.map(
-                (field, index) => (
+                (field, index) => {
+
+                  return (
                   <div key={index}>
                     <InputController
                       fieldDetails={field}
@@ -93,6 +97,7 @@ function Toolbar({ element, onUpdateElementProps }) {
                     />
                   </div>
                 )
+                  }
               )}
             </form>
           </div>

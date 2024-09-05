@@ -45,7 +45,7 @@ const SingleDimensionInput = ({ fieldDetails, formikFunctions, onChange,element 
     let predefinedValue = getPredefinedValue()
     setNumber(predefinedValue[0]);
     setUnit(predefinedValue[1]);
-  }, [element]);
+  }, [values[fieldDetails.property]]);
 
   return (
     <div className="input_with_dropdown">

@@ -11,10 +11,10 @@ const Editor = () => {
       type: "div",
       name: "Template",
       children: [],
-      style: { overflow: "hidden", "max-width": "-webkit-fill-available" },
+      style: { overflow: "hidden", "max-width": "-webkit-fill-available" ,'background-color':'#fff'},
       values: {},
       isOpen: true,
-      toolbarValues: {height:'50px', width:'80%', background:'#fff'}
+      toolbarValues: {'min-height':'50px', width:'100%', 'background-color':'#fff'}
     },
   ]);
 

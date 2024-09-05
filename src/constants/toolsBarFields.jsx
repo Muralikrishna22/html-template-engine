@@ -1,7 +1,7 @@
 import dropdownOptions from './inputDropdowns';
 import inputTypes from './inputTypes'
 
-const toolBarFields = {  
+const toolBarFields = {
     div: {
         "styles_fields": [
             {
@@ -13,7 +13,7 @@ const toolBarFields = {
             {
                 "field_type": inputTypes.SINGLE_DIMENSION_INPUT,
                 "label": "Height",
-                "property": "height",
+                "property": "min-height",
                 "defaultValue": "auto"
             },
             {
@@ -70,7 +70,10 @@ const toolBarFields = {
                 "label": "Flex direction",
                 "property": "flex-direction",
                 "defaultValue": "column",
-                "options":dropdownOptions.FLEX_DIRECTION
+                "options":dropdownOptions.FLEX_DIRECTION,
+                depenndencies: {
+                    element: ['children']
+                }
             },
             {
                 "field_type": inputTypes.MULTI_DROPDOWN_WITH_LABEL,
@@ -248,7 +251,7 @@ const toolBarFields = {
             {
                 "field_type": inputTypes.SINGLE_DIMENSION_INPUT,
                 "label": "Height",
-                "property": "height",
+                "property": "min-height",
                 "defaultValue": "auto"
             },
             // {

@@ -25,7 +25,7 @@ function ElementItem({ elements, onAddElement, parentType, onUpdateElement, setS
   };
 
   const handleAuxClick = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     setShowOptions(!showOptions);
   };
 
@@ -70,9 +70,9 @@ function ElementItem({ elements, onAddElement, parentType, onUpdateElement, setS
 
   return (
     <div className="element-item">
-      {elements.map((element) => (
+      {elements.map((element, ind) => (
         <div key={element.id} className="item">
-          <div className="element-header" onClick={(e) => toggleOpen(e, element)}>
+          <div className="element-header" onClick={(e) => toggleOpen(e, element)}  onDoubleClick={() => startEditing(element.id, element.name)}>
             {editingName === element.id ? (
               <input
                 type="text"
@@ -82,8 +82,8 @@ function ElementItem({ elements, onAddElement, parentType, onUpdateElement, setS
                 autoFocus
               />
             ) : (
-              <span className={'element-name'} onDoubleClick={() => startEditing(element.id, element.name)}>
-                {element.name}
+              <span className={'element-name'}>
+                {element.name} {element.name !== 'Template' && ind+1}
               </span>
             )}
             <div>
