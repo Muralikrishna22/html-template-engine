@@ -13,15 +13,16 @@ function ElementManager({
   setSelectedElement
 }) {
   const addElement = (parentId, type) => {
-    let randomBg = getRandomColor()
+    let randomBg = type === 'div' ? getRandomColor() : 'transparent'
+
     const newElement = {
       id: Date.now(),
       type: type,
       name: (elementTypes?.find((obj) => obj.type === type)?.name || type),
       children: ['div', 'a', 'p'].includes(type) ? [] : null,
-      style: {'background-color':randomBg, 'min-height':'50px', width:'100%', 'box-sizing': 'border-box'},
+      style: {'background-color':randomBg, 'min-height':'50px', width:'100%', 'box-sizing': 'border-box', color:'black'},
       values: {},
-      toolbarValues: {'background-color':randomBg, 'min-height':'50px', width:'100%','box-sizing': 'border-box'},
+      toolbarValues: {'background-color':randomBg, 'min-height':'50px', width:'100%','box-sizing': 'border-box',color:'black'},
     };
     if (parentId === null) {
       setRootElements([...rootElements, newElement]);

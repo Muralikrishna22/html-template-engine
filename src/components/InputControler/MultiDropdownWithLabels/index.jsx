@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import InputWithImageButtonAndDropdown from '../InputWithImageButtonAndDropdown';
 import './styles.css';
+import InputWithButtonList from '../InputWithButtonList';
 
 
 const MultiDropdownWithLabels = ({fieldDetails, formikFunctions}) => {
@@ -15,28 +16,22 @@ const MultiDropdownWithLabels = ({fieldDetails, formikFunctions}) => {
 
   return (
     <div className="multi-input-with-labels">
-       <label className="input-label">Align Container</label>
+       {/* <label className="input-label">Align Container</label> */}
       <div className="input-group">
-        {/* <label className="input-label">Position (-Left, Top-Right, etc.)</label> */}
-        <InputWithImageButtonAndDropdown
-          options={firstInputOptions}
-          fieldDetails={fieldDetails}
+        <InputWithButtonList
+          fieldDetails={{...fieldDetails, options: firstInputOptions, label: 'Position'}}
           formikFunctions={formikFunctions}
         />
       </div>
       <div className="input-group">
-        {/* <label className="input-label">Vertical Alignment (Top, Middle, Bottom)</label> */}
-        <InputWithImageButtonAndDropdown
-          options={secondInputOptions}
-          fieldDetails={fieldDetails}
+         <InputWithButtonList
+          fieldDetails={{...fieldDetails, options: secondInputOptions, label: 'Space Evenly'}}
           formikFunctions={formikFunctions}
         />
       </div>
       <div className="input-group">
-        {/* <label className="input-label">Horizontal Alignment (Left, Center, Right)</label> */}
-        <InputWithImageButtonAndDropdown
-          options={thirdInputOptions}
-          fieldDetails={fieldDetails}
+        <InputWithButtonList
+          fieldDetails={{...fieldDetails, options: thirdInputOptions, label: 'Space Between'}}
           formikFunctions={formikFunctions}
         />
       </div>

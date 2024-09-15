@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import './styles.css';
 
-const InputWithImageButtonAndDropdown = ({fieldDetails, formikFunctions, options }) => {
+const InputWithImageButtonAndDropdown = ({fieldDetails, formikFunctions, options,firstInputOptions }) => {
   const {
     values,
     setFieldValue,

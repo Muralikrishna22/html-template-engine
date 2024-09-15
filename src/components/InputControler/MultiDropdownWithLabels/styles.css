@@ -1,19 +1,26 @@
-.multi-input-with-labels {
+/* .multi-input-with-labels {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: flex-start;
-  }
-  
-  .input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: black;
-  }
-  
-  .input-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
+  } */
+
+.multi-input-with-labels .button-list {
+  width: 100%;
+}
+
+.multi-input-with-labels .button-item {
+  width: 30%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: black;
+}
+
+.input-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}

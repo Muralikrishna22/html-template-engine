@@ -1,8 +1,8 @@
 .element-manager {
-  padding: 0 20px 0 0;
+  padding: 0 10px 0 0;
   width: 400px;
   font-family: Arial, sans-serif;
-  background-color: #1e1e1e;
+  background-color: #232325;
 }
 
 .element-manager .header{
@@ -16,12 +16,12 @@
 
 .element-item {
   margin-left: 20px;
-  margin-top: 10px;
+  margin-top: 18px;
   position: relative;
 }
 
 .item {
-  margin-bottom: 5px;
+  margin-bottom: 18px;
 }
 
 .element-header {
@@ -39,25 +39,33 @@
 
 .add-element {
   position: absolute;
-  top: 0;
-  right: -150px;
-  background: black;
-  padding: 10px;
-  border-radius: 10px;
+  top: 0px;
+  right: -114px;
+  border: 1px solid #007bff;
+  border-radius: 0px 10px 10px 10px;
   z-index: 2;
+  background: black;
 }
 
 .element-options {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
   text-transform: capitalize;
 }
 
 .element-options button {
-  margin-bottom: 5px;
   padding: 5px 10px;
   cursor: pointer;
+  border-bottom: 1px solid #007bff;
+  text-align: left;
+  color: #007bff;
+}
+
+.add_element_button{
+  padding: 5px;
+  background: #007bff;
+  margin-right: 10px;
+  border-radius: 10px 0px 10px 10px;
 }
 
 .toggle-btn {

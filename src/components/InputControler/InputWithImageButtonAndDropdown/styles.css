@@ -2,8 +2,9 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
   }
-  
+
   .image-button {
     width: 50px;
     height: 50px;
@@ -14,14 +15,14 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    padding: 0px;
   }
-  
+
   .image-button img {
-    max-width: 24px;
-    max-height: 24px;
+    max-width: 45px;
+    max-height: 45px;
   }
-  
+
   .dropdown {
     width: 150px;
   }
-  

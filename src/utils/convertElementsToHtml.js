@@ -1,7 +1,7 @@
 
 function jsonToHtml(element) {
     let voidElements = ['img']
-    let html = `<${element.type} id="${element.id}" style="${convertStyleToString(element.style)}">${element.value || ''}`;
+    let html = `${element.href ? `<a href=${element.href}>` : ''}<${element.type} id="${element.id}" style="${convertStyleToString(element.style)}">${element.value || ''}`;
 
     // Recursively generate HTML for each child element
     if (element.children && element.children.length > 0) {
@@ -13,7 +13,7 @@ function jsonToHtml(element) {
     if (voidElements?.includes(element?.type)) {
         html += `/>`;
     } else {
-        html += `</${element.type}>`;
+        html += `</${element.type}>${element.href ? `</a>` : ''}`;
     }
 
     return html;

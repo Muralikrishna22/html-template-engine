@@ -23,7 +23,7 @@
 }
 
 .dimension-input-select {
-    width: 100px;
+    min-width: 120px;
 }
 
 .dimension-select__control {

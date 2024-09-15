@@ -23,12 +23,6 @@ const toolBarFields = {
                 "defaultValue": "#ffffff"
             },
             {
-                "field_type": inputTypes.COLOR_PICKER_WITH_LABEL,
-                "label": "Color",
-                "property": "color",
-                "defaultValue": "#000000"
-            },
-            {
                 "field_type": inputTypes.MULTI_DIMENSION_INPUT,
                 "label": "Inner Space",
                 "property": "padding",
@@ -118,6 +112,22 @@ const toolBarFields = {
             //     "property": "bottom",
             //     "defaultValue": "0px"
             // },
+        ],
+        content_fields: [
+            {
+                "field_type": "text",
+                "label": "Text",
+                "value": "Link text",
+                "property": "value",
+                "defaultValue":'Write you text here',
+            },
+            {
+                "field_type": "text",
+                "label": "Href",
+                "value": "#",
+                "property": "href",
+                "defaultValue":'Add Link to this',
+            }
         ]
     },
     a: {
@@ -158,7 +168,8 @@ const toolBarFields = {
                 "field_type": "text",
                 "label": "Text",
                 "value": "Link text",
-                "property": "value"
+                "property": "value",
+                "defaultValue":'Write you text here',
             },
             {
                 "field_type": "text",
@@ -207,12 +218,20 @@ const toolBarFields = {
                 "defaultValue": "0"
             }
         ],
-        "content_fields": [
+        content_fields: [
             {
                 "field_type": "text",
                 "label": "Text",
-                "value": "Paragraph text",
-                "property": "value"
+                "value": "Link text",
+                "property": "value",
+                "defaultValue":'Write you text here',
+            },
+            {
+                "field_type": "text",
+                "label": "Href",
+                "value": "#",
+                "property": "href",
+                "defaultValue":'Add Link to this',
             }
         ]
     },

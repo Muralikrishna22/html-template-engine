@@ -89,7 +89,7 @@ function ElementItem({ elements, onAddElement, parentType, onUpdateElement, setS
             <div>
               {allowedTypes.length > 0 && (
                 <>
-                  <button onClick={(e) => handleAddClick(e, element)}>+</button>
+                  <button className='add_element_button' onClick={(e) => handleAddClick(e, element)}>+</button>
                   <button className="toggle-btn">
                     {element.isOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
                   </button>

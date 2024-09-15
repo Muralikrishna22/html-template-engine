@@ -4,7 +4,7 @@
   box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
   display: flex;
   flex-direction: column;
-  background-color: #1e1e1e;
+  background-color: #232325;
 }
 
 .toolbar .header{
@@ -64,4 +64,20 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+.toolbar-tabs{
+  display: flex;
+  width: 100%;
+  background: black;
+  border-top: 1px solid #232325;
+}
+
+.toolbar-tabs .tab{
+  width: 50%;
+  padding: 10px;
+}
+
+.toolbar-tabs .tab.active {
+  background-color: #232325;
 }

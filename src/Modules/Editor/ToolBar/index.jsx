@@ -7,6 +7,17 @@ import inputTypes from "../../../constants/inputTypes";
 
 function Toolbar({ element, onUpdateElementProps }) {
   if (!element) return null;
+  let tabs = [
+    {
+      label: "styles",
+      id: 1,
+    },
+    {
+      label: "values",
+      id: 2,
+    },
+  ];
+  const [currentTab, setCurrentTab] = useState(tabs[0]);
 
   function getInitialValues() {
     return element.toolbarValues || {};
@@ -66,39 +77,62 @@ function Toolbar({ element, onUpdateElementProps }) {
         return (
           <div className="toolbar">
             <div className="header">
-              <h3>{element.name} Properties/Styles</h3>
+              <h3>{element.name}</h3>
+            </div>
+
+            <div className="toolbar-tabs">
+              {tabs.map((tab) => (
+                <div
+                  className={`tab ${tab.id === currentTab.id ? "active" : ""}`}
+                  onClick={() => setCurrentTab(tab)}
+                >
+                  {" "}
+                  {tab?.label}
+                </div>
+              ))}
             </div>
 
             <form>
+
               {/* Content Fields */}
-              {/* {toolBarFields[element.type]?.content_fields?.map((field, index) => (
-                <div key={index} className="form-group">
-                  <label>{field.label}:</label>
-                  <Field
-                    type={field.field_type}
-                    name={field.property}
-                    value={values[field.property]}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                </div>
-              ))} */}
+              {currentTab?.id === 2 && (
+                <>
+                  {toolBarFields[element.type]?.content_fields?.map(
+                    (field, index) => (
+                      <div key={index} className="form-group">
+                        <label>{field.label}:</label>
+                        <Field
+                          type={field.field_type}
+                          name={field.property}
+                          value={values[field.property]}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
+                      </div>
+                    )
+                  )}
+                </>
+              )}
 
               {/* Style Fields */}
-              {toolBarFields[element.type]?.styles_fields?.map(
-                (field, index) => {
-
-                  return (
-                  <div key={index}>
-                    <InputController
-                      fieldDetails={field}
-                      formikFunctions={formikFunctions}
-                      element={element}
-                    />
-                  </div>
-                )
-                  }
+              {currentTab?.id === 1 && (
+                <>
+                  {toolBarFields[element.type]?.styles_fields?.map(
+                    (field, index) => {
+                      return (
+                        <div key={index} className="form-group">
+                          <InputController
+                            fieldDetails={field}
+                            formikFunctions={formikFunctions}
+                            element={element}
+                          />
+                        </div>
+                      );
+                    }
+                  )}
+                </>
               )}
+
             </form>
           </div>
         );
